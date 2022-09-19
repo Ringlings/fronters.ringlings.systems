@@ -126,16 +126,6 @@ body {
                 background-color: $background;
             }
         }
-
-        .back {
-            display: flex;
-            gap: 0.325rem;
-            padding: 1rem;
-            padding-right: 0.5rem;
-            border-radius: 4px;
-            background-color: $block;
-            color: inherit;
-        }
     
     }
 
@@ -221,6 +211,26 @@ body {
             }
         }
     }
+
+    .hidden-desktop {
+        display: none !important;
+    }
+}
+
+@media (max-width: 800px) {
+    .hidden-mobile {
+        display: none !important;
+    }
+}
+
+.back {
+    display: flex;
+    gap: 0.325rem;
+    padding: 1rem;
+    padding-right: 0.5rem;
+    border-radius: 4px;
+    background-color: $block;
+    color: inherit;
 }
 
 /* discord markdown stuff */
