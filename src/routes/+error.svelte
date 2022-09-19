@@ -1,5 +1,6 @@
 <script lang="ts">
-    import GlobalStyle from '$lib/styles/global.scss';
+    import LightStyle from '$lib/styles/light.scss';
+    import DarkStyle from '$lib/styles/dark.scss';
     import { page } from '$app/stores';
 </script>
 
