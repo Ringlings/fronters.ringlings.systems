@@ -4,6 +4,7 @@
     import twemoji from 'twemoji';
     import moment from 'moment';
     import FontAwesome from '../../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+    import FontAwesomeSolid from '../../../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
     import { getEmojis, getBirthday, getPronouns, getDescription, getGroups, getAvatar, getColor, getBanner, getName, convertToHTML } from '$lib/functions/strings';
 
     const { toHTML } = toHtml;
