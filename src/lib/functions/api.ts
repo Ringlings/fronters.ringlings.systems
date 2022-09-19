@@ -8,7 +8,7 @@ export function getSystemId() {
     return sid;
 }
 
-export async function fetchApi(url: string) {
+export async function fetchApi(url: string, fallback: any = undefined) {
     let res: any;
     res = await fetch(url, {
         headers: {
@@ -17,7 +17,7 @@ export async function fetchApi(url: string) {
     })
     .then(resp => {
         if (resp.status === 404) throw error(404, `System with id ${getSystemId()} not found.`);
-        if (resp.status === 403) throw error(403, `Front is currently private.`);
+        if (resp.status === 403) if (fallback) { return fallback } else throw error(403, `Resource is currently private.`);
         if (resp.status === 500) throw error(500, "Internal server error. This is on PluralKit's end.");
         if (resp.status === 429) throw error(500, "PluralKit is rate limiting us! Please try again.")
         if (resp.ok) return resp.json();

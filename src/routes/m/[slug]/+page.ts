@@ -5,8 +5,13 @@ export const prerender = false;
 export async function load( {params, fetch} ) {
     const mid = params.slug;
 
-    const member = await fetchApi(`https://api.pluralkit.me/v2/members/${mid}`)
-    const groups = await fetchApi(`https://api.pluralkit.me/v2/members/${mid}/groups`)
+    let member;
+    let groups;
 
-    return {member, groups};
+    await Promise.all([
+        fetchApi(`https://api.pluralkit.me/v2/members/${mid}`),
+        fetchApi(`https://api.pluralkit.me/v2/members/${mid}/groups`, [])
+    ]).then((values) => {member = values[0]; groups = values[1]});
+
+    return { member, groups };
 }
