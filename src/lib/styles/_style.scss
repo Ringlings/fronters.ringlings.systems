@@ -69,11 +69,13 @@ body {
     flex-direction: column;
 }
 
-.front.link:hover, .front.link:focus {
-    outline: none !important;
-    box-shadow: 0px 0px 0px 3px rgba($highlight, 0.6);
-    transform: scale(102%);
-    transition: transform 0.1s ease-out;
+@media (prefers-reduced-motion: no-preference) {
+    .front.link:hover, .front.link:focus {
+        outline: none !important;
+        box-shadow: 0px 0px 0px 3px rgba($highlight, 0.6);
+        transform: scale(102%);
+        transition: transform 0.1s ease-out;
+    }
 }
 
 .tinytext {
@@ -237,9 +239,14 @@ blockquote {
 a {
     color: $highlight;
     text-decoration: none;
-    transition: color 0.3s ease;
 }
 
-a:hover {
-    color: adjust-hue($highlight, 20);
+@media (prefers-reduced-motion: no-preference) {
+    a {
+        transition: color 0.3s ease;
+    }
+
+    a:hover {
+        color: adjust-hue($highlight, 20);
+    }
 }
