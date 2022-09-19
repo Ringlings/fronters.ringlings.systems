@@ -16,12 +16,12 @@ export async function fetchApi(url: string, fallback: any = undefined) {
             }
     })
     .then(resp => {
-        if (resp.status === 404) throw error(404, `System with id ${getSystemId()} not found.`);
-        if (resp.status === 403) if (fallback) { return fallback } else throw error(403, `Resource is currently private.`);
+        if (resp.status === 404) throw error(404, "Resource not found.");
+        if (resp.status === 403) if (fallback) { return fallback } else throw error(403, "Resource is currently private.");
         if (resp.status === 500) throw error(500, "Internal server error. This is on PluralKit's end.");
         if (resp.status === 429) throw error(500, "PluralKit is rate limiting us! Please try again.")
         if (resp.ok) return resp.json();
-        throw error(500, "Internal server error. This this site's fault. Please report it to the developers!");
+        throw error(500, "Internal server error. This is the site's fault. Please report it to the developers!");
     });
 
     return await res;
