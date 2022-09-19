@@ -3,6 +3,7 @@
     import toHtml from 'discord-markdown';
     import twemoji from 'twemoji';
     import moment from 'moment';
+    import FontAwesome from '../../../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
     import { getEmojis, getBirthday, getPronouns, getDescription, getGroups, getAvatar, getColor, getBanner, getName, convertToHTML } from '$lib/functions/strings';
 
     const { toHTML } = toHtml;
@@ -31,7 +32,10 @@
                 <span><b>Pronouns:</b> {@html convertToHTML(getPronouns(member))}</span>
             {/if}
         </div>
-        <a class="back hidden-mobile" href="/"><b>Back</b></a>
+        <a class="back hidden-mobile" href="/">
+            <i class="fa-solid fa-arrow-left-long"></i>
+            <b>Back</b>
+        </a>
     </section>
     <div class="content">
     {#if getDescription(member)}
@@ -55,6 +59,9 @@
     {:else if getColor(member)}
     <div class="banner small" style={`background-color: ${getColor(member)}`}></div>
     {/if}
-    <a class="back hidden-desktop" href="/"><b>Back</b></a>
+    <a class="back hidden-desktop" href="/">
+        <i class="fa-solid fa-arrow-left-long"></i>
+        <b>Back</b>
+    </a>
     </div>
 </div>
