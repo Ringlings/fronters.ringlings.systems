@@ -5,7 +5,7 @@
     export let member: Member;
 
 </script>
-<a class="front link" href={`/m/${member.id}`} >
+<a class="front link hoverable" href={`/m/${member.id}`} >
     <div class="card front" style={getColor(member) ? `border-bottom: 4px solid ${getColor(member)};` : ""}>
         {#if getAvatar(member)}
         <img class="avatar" src={getAvatar(member)} alt={`${member.name}'s avatar`}>

@@ -70,7 +70,7 @@ body {
 }
 
 @media (prefers-reduced-motion: no-preference) {
-    .front.link:hover, .front.link:focus {
+    .hoverable:hover, .hoverable:focus {
         outline: none !important;
         box-shadow: 0px 0px 0px 3px rgba($highlight, 0.6);
         transform: scale(102%);

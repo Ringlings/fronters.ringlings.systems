@@ -33,7 +33,7 @@
                 <span><b>Pronouns:</b> {@html convertToHTML(getPronouns(member))}</span>
             {/if}
         </div>
-        <a class="back hidden-mobile" href="/">
+        <a class="back hidden-mobile hoverable" href="/">
             <i class="fa-solid fa-arrow-left-long"></i>
             <b>Back</b>
         </a>
@@ -60,7 +60,7 @@
     {:else if getColor(member)}
     <div class="banner small" style={`background-color: ${getColor(member)}`}></div>
     {/if}
-    <a class="back hidden-desktop" href="/">
+    <a class="back hidden-desktop hoverable" href="/">
         <i class="fa-solid fa-arrow-left-long"></i>
         <b>Back</b>
     </a>
