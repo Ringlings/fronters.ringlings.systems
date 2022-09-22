@@ -134,7 +134,6 @@ export function buildFrontPageTitle(members: Member[]) {
     if (variables.systemName) return `Currently fronting in ${variables.systemName}!`
     else return `Currently fronting...`;
 }
-
 // Builds the opengraph embed title for the current fronters page
 export function buildFrontEmbedTitle(members: Member[]) {
     if (useCustom) return custom.buildFrontEmbedTitle(members);
@@ -165,6 +164,22 @@ export function buildFrontEmbedDescription(members: Member[]) {
     return str;
 }
 
+// Builds the page title for the all members page
+export function buildAllPageTitle() {
+    if (useCustom) return custom.buildAllPageTitle();
+
+    if (variables.systemName) return `Members of ${variables.systemName}!`
+    else return `Members of the system!`;
+}
+
+// Builds the opengraph embed description for the all members page
+export function buildAllEmbedDescription(members: Member[]) {
+    if (useCustom) return custom.buildAllEmbedDescription(members);
+
+    return `See the ${members.length} members of ${variables.systemName || "the system"}!`;
+}
+
+
 // Builds the page title for a member page
 export function buildMemberPageTitle(member: Member) {
     if (useCustom) return custom.buildMemberPageTitle(member);
@@ -192,4 +207,11 @@ export function buildSwitchOutText() {
     if (useCustom) return custom.buildSwitchOutText();
 
     return "We are currently switched out!";
+}
+
+// Returns the text that shows when the system has no members
+export function buildNoMemberText() {
+    if (useCustom) return custom.buildNoMemberText();
+
+    return "The system has no members!";
 }

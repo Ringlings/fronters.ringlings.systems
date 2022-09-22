@@ -223,18 +223,35 @@ body {
     }
 }
 
-.back {
+.button {
     display: flex;
     gap: 0.325rem;
     padding: 1rem;
-    padding-right: 0.5rem;
     border-radius: 4px;
     background-color: $block;
-    color: inherit;
+    max-width: 20rem;
 
     b {
         margin-left: 0.2rem;
+        color: $text;
     }
+
+    i {
+        color: $text;
+    }
+}
+
+.centered {
+    display: flex;
+    justify-content: center;
+}
+
+.pt-1 {
+    padding-top: 1rem;
+}
+
+.pb-1 {
+    padding-top: 1rem;
 }
 
 /* discord markdown stuff */

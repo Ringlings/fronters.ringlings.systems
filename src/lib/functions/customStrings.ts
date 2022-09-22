@@ -31,12 +31,15 @@ export default {
     buildFrontPageTitle: buildFrontPageTitle,
     buildFrontEmbedTitle: buildFrontEmbedTitle,
     buildFrontEmbedDescription: buildFrontEmbedDescription,
+    buildAllPageTitle: buildAllPageTitle,
+    buildAllEmbedDescription: buildAllEmbedDescription,
     buildMemberPageTitle: buildMemberPageTitle,
     buildMemberEmbedDescription: buildMemberEmbedDescription,
     buildMemberEmbedTitle: buildMemberEmbedTitle,
     getSystemName: getSystemName,
     getSystemId: getSystemId,
     buildSwitchOutText: buildSwitchOutText,
+    buildNoMemberText: buildNoMemberText
 }
 
 // Converts discord markdown into HTML, and parses twemojis
@@ -144,6 +147,17 @@ function buildFrontEmbedDescription(members: Member[]) {
     return str;
 }
 
+// Builds the page title for the all members page
+function buildAllPageTitle() {
+    if (variables.systemName) return `Members of ${variables.systemName}!`
+    else return `Members of the system!`;
+}
+
+// Builds the opengraph embed description for the all members page
+export function buildAllEmbedDescription(members: Member[]) {
+    return `See the ${members.length} members of ${variables.systemName || "the system"}!`;
+}
+
 // Builds the page title for a member page
 function buildMemberPageTitle(member: Member) {
     return buildMemberEmbedTitle(member)
@@ -181,4 +195,9 @@ function buildMemberEmbedDescription(member: Member) {
 // Returns the text that shows when switched out
 export function buildSwitchOutText() {
     return "We are currently switched out!";
+}
+
+// Returns the text that shows when the system has no members
+export function buildNoMemberText() {
+    return "The system has no members!";
 }

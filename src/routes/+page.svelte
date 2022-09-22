@@ -3,6 +3,8 @@
 
     import LightStyle from '$lib/styles/light.scss';
     import DarkStyle from '$lib/styles/dark.scss';
+    import FontAwesome from '../../node_modules/@fortawesome/fontawesome-free/scss/fontawesome.scss';
+    import FontAwesomeSolid from '../../node_modules/@fortawesome/fontawesome-free/scss/solid.scss';
     import Front from '$lib/components/cards/Front.svelte';
     import { buildSwitchOutText, buildFrontPageTitle, buildFrontEmbedDescription, buildFrontEmbedTitle, getAvatar, getColor } from '$lib/functions/strings';
 
@@ -24,6 +26,12 @@
     {/if}
 </div>
 <span class="tinytext">(Click a card to view member info)</span>
+<div class="centered pt-1">
+    <a class="button hoverable" href="/all">
+        <i class="fa-solid fa-users"></i>
+        <b>See all members</b>
+    </a>
+</div>
 
 <svelte:head>
     <title>{buildFrontPageTitle(data.members)}</title>
