@@ -9,6 +9,9 @@
 
     const { toHTML } = toHtml;
 
+    const urlSearchParams = new URLSearchParams(window.location.search);
+    const returnPath = urlSearchParams.get('return') || '/';
+
     export let member: Member;
     export let groups: Group[];
 </script>
@@ -33,7 +36,7 @@
                 <span><b>Pronouns:</b> {@html convertToHTML(getPronouns(member))}</span>
             {/if}
         </div>
-        <a class="back hidden-mobile hoverable button" href="/">
+        <a class="back hidden-mobile hoverable button" href="{returnPath}">
             <i class="fa-solid fa-arrow-left-long"></i>
             <b>Back</b>
         </a>

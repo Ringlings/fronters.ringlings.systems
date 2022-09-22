@@ -19,7 +19,7 @@
 <div class="front container">
     {#if data.members}
     {#each data.members as member}
-        <Front {member}/>
+        <Front {member} returnPath="/all"/>
     {/each}
     {:else}
         <h3>{@html buildNoMemberText()}</h3>

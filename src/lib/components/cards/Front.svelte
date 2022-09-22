@@ -3,9 +3,10 @@
     import { getName, getPronouns, convertToHTML, getAvatar, getColor } from '$lib/functions/strings'
 
     export let member: Member;
+    export let returnPath: string;
 
 </script>
-<a class="front link hoverable" href={`/m/${member.id}`} >
+<a class="front link hoverable" href={`/m/${member.id}?return=${returnPath}`} >
     <div class="card front" style={getColor(member) ? `border-bottom: 4px solid ${getColor(member)};` : ""}>
         {#if getAvatar(member)}
         <img class="avatar" src={getAvatar(member)} alt={`${member.name}'s avatar`}>
