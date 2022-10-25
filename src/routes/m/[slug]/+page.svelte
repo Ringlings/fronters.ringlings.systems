@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
+    import { page } from '$app/stores';
 
     import LightStyle from '$lib/styles/light.scss';
     import DarkStyle from '$lib/styles/dark.scss';
@@ -8,9 +8,6 @@
     import { buildMemberPageTitle, buildMemberEmbedTitle, buildMemberEmbedDescription, getAvatar, getColor } from '$lib/functions/strings';
 
     export let data: {member: MemberType, groups: Group[]};
-
-    let url = "";
-    onMount(() => url = window.location.href);
 </script>
 
 <Member member={data.member} groups={data.groups} />
@@ -20,7 +17,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content={buildMemberEmbedTitle(data.member)} />
     <meta property="og:description" content={buildMemberEmbedDescription(data.member)} />
-    <meta property="og:url" content={url} />
+    <meta property="og:url" content={$page.url.pathname} />
     <meta property="og:image" content={getAvatar(data.member)} />
     <meta name="theme-color" content={getColor(data.member, true)}>
 </svelte:head>

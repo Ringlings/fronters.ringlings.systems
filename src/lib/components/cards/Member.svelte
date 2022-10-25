@@ -1,5 +1,6 @@
 <script lang="ts">
     import type { Member, Group } from '$lib/types';
+    import { page } from '$app/stores';
     import toHtml from 'discord-markdown';
     import twemoji from 'twemoji';
     import moment from 'moment';
@@ -9,7 +10,7 @@
 
     const { toHTML } = toHtml;
 
-    const urlSearchParams = new URLSearchParams(window.location.search);
+    const urlSearchParams = new URLSearchParams($page.url.pathname);
     const returnPath = urlSearchParams.get('return') || '/';
 
     export let member: Member;

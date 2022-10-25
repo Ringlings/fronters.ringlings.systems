@@ -1,0 +1,10 @@
+name = "lucky-sun-78b2"
+account_id = "870d596bc7edb180166ec010bbc13185"
+
+main = "./.cloudflare/worker.js"
+site.bucket = "./.cloudflare/public"
+
+build.command = "pnpm build"
+
+compatibility_date = "2021-11-12"
+workers_dev = true

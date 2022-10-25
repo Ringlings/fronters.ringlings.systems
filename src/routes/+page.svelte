@@ -1,5 +1,5 @@
 <script lang="ts">
-    import { onMount } from 'svelte';
+    import { page } from '$app/stores';
 
     import LightStyle from '$lib/styles/light.scss';
     import DarkStyle from '$lib/styles/dark.scss';
@@ -9,9 +9,6 @@
     import { buildSwitchOutText, buildFrontPageTitle, buildFrontEmbedDescription, buildFrontEmbedTitle, getAvatar, getColor } from '$lib/functions/strings';
 
     export let data;
-
-    let url = "";
-    onMount(() => url = window.location.href);
 </script>
 <style src="lib/styles/_style.scss"></style>
 
@@ -38,7 +35,7 @@
     <meta property="og:type" content="website">
     <meta property="og:title" content={buildFrontEmbedTitle(data.members)} />
     <meta property="og:description" content={buildFrontEmbedDescription(data.members)} />
-    <meta property="og:url" content={url} />
+    <meta property="og:url" content={$page.url.pathname} />
     <meta property="og:image" content={data.members && data.members.length > 0 ? getAvatar(data.members[0]) : ""} />
     <meta name="theme-color" content={data.members && data.members.length > 0 ? getColor(data.members[0], true) : ""}>
 </svelte:head>
