@@ -10,7 +10,7 @@
 
     const { toHTML } = toHtml;
 
-    const urlSearchParams = new URLSearchParams($page.url.pathname);
+    const urlSearchParams = new URLSearchParams($page.url.href);
     const returnPath = urlSearchParams.get('return') || '/';
 
     export let member: Member;
