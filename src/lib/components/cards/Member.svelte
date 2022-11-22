@@ -10,8 +10,7 @@
 
     const { toHTML } = toHtml;
 
-    const urlSearchParams = new URLSearchParams($page.url.href);
-    const returnPath = urlSearchParams.get('return') || '/';
+    const returnPath = $page.url.searchParams.get('return') || '/pineapple';
 
     export let member: Member;
     export let groups: Group[];
@@ -64,7 +63,7 @@
     {:else if getColor(member)}
     <div class="banner small" style={`background-color: ${getColor(member)}`}></div>
     {/if}
-    <a class="back hidden-desktop hoverable" href="/">
+    <a class="back hidden-desktop hoverable" href="{returnPath}">
         <i class="fa-solid fa-arrow-left-long"></i>
         <b>Back</b>
     </a>
