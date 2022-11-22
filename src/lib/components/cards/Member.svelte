@@ -10,8 +10,7 @@
 
     const { toHTML } = toHtml;
 
-    const urlSearchParams = new URLSearchParams($page.url.href);
-    const returnPath = urlSearchParams.get('return') || '/';
+    const returnPath = $page.url.searchParams.get('return') || '/pineapple';
 
     export let member: Member;
     export let groups: Group[];
