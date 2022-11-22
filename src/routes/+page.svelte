@@ -14,7 +14,7 @@
 
 <h2>{buildFrontPageTitle(data.members)}</h2>
 <div class="front container">
-    {#if data.members}
+    {#if data.members.length != 0}
     {#each data.members as member}
         <Front {member} returnPath="/"/>
     {/each}
