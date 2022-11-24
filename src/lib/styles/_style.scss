@@ -211,6 +211,10 @@ body {
         }
     }
 
+    .button {
+        max-width: 20rem;
+    }
+
     .hidden-desktop {
         display: none !important;
     }
@@ -228,7 +232,6 @@ body {
     padding: 1rem;
     border-radius: 4px;
     background-color: $block;
-    max-width: 20rem;
 
     b {
         margin-left: 0.2rem;

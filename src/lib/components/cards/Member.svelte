@@ -42,6 +42,10 @@
         </a>
     </section>
     <div class="content">
+    <a class="back hidden-desktop hoverable button" href="{returnPath}">
+        <i class="fa-solid fa-arrow-left-long"></i>
+        <b>Back</b>
+    </a>
     {#if getDescription(member)}
     <main class="desc" style={getBanner(member) && getColor(member) ? `border-left: 4px solid ${getColor(member)}` : ""}>
             <div>
@@ -63,9 +67,5 @@
     {:else if getColor(member)}
     <div class="banner small" style={`background-color: ${getColor(member)}`}></div>
     {/if}
-    <a class="back hidden-desktop hoverable" href="{returnPath}">
-        <i class="fa-solid fa-arrow-left-long"></i>
-        <b>Back</b>
-    </a>
     </div>
 </div>
