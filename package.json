@@ -12,23 +12,24 @@
 	"devDependencies": {
 		"@sveltejs/kit": "next",
 		"nprogress": "^0.2.0",
-		"svelte": "^3.44.0",
-		"svelte-check": "^2.7.1",
-		"svelte-preprocess": "^4.10.6",
-		"tslib": "^2.3.1",
-		"typescript": "^4.7.4",
-		"vite": "^3.2.0"
+		"svelte": "^3.55.0",
+		"svelte-check": "^2.10.2",
+		"svelte-preprocess": "^4.10.7",
+		"tslib": "^2.4.1",
+		"typescript": "^4.9.4",
+		"vite": "^4.0.2"
 	},
 	"type": "module",
 	"dependencies": {
-		"@fortawesome/fontawesome-free": "^6.2.0",
+		"@fortawesome/fontawesome-free": "^6.2.1",
 		"@sveltejs/adapter-cloudflare": "1.0.0-next.34",
 		"@sveltejs/adapter-cloudflare-workers": "1.0.0-next.59",
 		"discord-markdown": "^2.5.1",
-		"dotenv": "^16.0.2",
-		"emoji-regex": "^10.1.0",
+		"dotenv": "^16.0.3",
+		"emoji-regex": "^10.2.1",
 		"moment": "^2.29.4",
-		"sass": "^1.54.9",
+		"pnpm": "^7.18.2",
+		"sass": "^1.57.0",
 		"twemoji": "^14.0.2"
 	}
 }
