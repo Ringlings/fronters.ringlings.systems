@@ -108,7 +108,7 @@ export function getName(member: Member) {
     if (member.display_name) {
         // Remove anything after the first | 
         // usually pronouns 
-        nick = member.display_name.split("|")[0].trim()
+        nick = member.display_name.split(" | ")[0].trim()
     }
 
     if (nick !== member.name) {
