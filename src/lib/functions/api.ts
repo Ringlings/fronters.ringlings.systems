@@ -12,7 +12,7 @@ export async function fetchApi(url: string, fallback: any = undefined) {
     let res: any;
     res = await fetch(url, {
         headers: {
-            'origin': 'https://fronters.akarys.me'
+            'user-agent': variables.systemName + ' fronter display'
             }
     })
     .then(resp => {
